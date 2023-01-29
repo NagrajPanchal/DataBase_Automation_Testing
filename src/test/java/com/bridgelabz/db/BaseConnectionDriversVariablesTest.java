@@ -1,3 +1,9 @@
+//******************************************************
+//Author Name : Nagraj Panchal
+//Project     : Database Automation Testing Connection Drivers Variables
+//Date        : 29/01/2023
+//******************************************************
+
 package com.bridgelabz.db;
 
 import java.sql.*;
@@ -5,7 +11,7 @@ import java.sql.*;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class BaseConnectionDriversVariables
+public class BaseConnectionDriversVariablesTest
 {
     public static String dbUrl = "jdbc:mysql://localhost:3306/CFP_216";
     public static String userName = "root";
@@ -17,7 +23,7 @@ public class BaseConnectionDriversVariables
     public void getVariable_Values() throws SQLException {
         con = DriverManager.getConnection(dbUrl,userName,password);
         stmt = con.createStatement();
-        System.out.println("Connection : "+con);
+        System.out.println("Connection Established : "+con);
         System.out.println("Statement : "+stmt);
     }
     @AfterTest
