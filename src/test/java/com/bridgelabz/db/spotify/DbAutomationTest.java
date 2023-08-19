@@ -1,17 +1,16 @@
 //******************************************************
 //Author Name : Nagraj Panchal
-//Project     : Database Automation Testing : Tracks
+//Project     : Database Automation Testing
 //Date        : 29/01/2023
 //******************************************************
 
-package com.bridgelabz.db;
+package com.bridgelabz.db.spotify;
 
+import com.bridgelabz.db.spotify.BaseConnectionDriversVariablesTest;
 import org.testng.annotations.Test;
 
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-public class TracksTableTest extends BaseConnectionDriversVariablesTest
+import java.sql.*;
+public class DbAutomationTest extends BaseConnectionDriversVariablesTest
 {
     @Test
     public void getTracks_TableData_Successfully() throws SQLException {
@@ -23,6 +22,31 @@ public class TracksTableTest extends BaseConnectionDriversVariablesTest
             String trackDetails = result.getString(3);
             String playListId = result.getString(4);
             System.out.println(trackId+","+trackName+","+trackDetails+","+playListId);
+        }
+    }
+
+    @Test
+    public void getPlayList_TableData_Successfully() throws SQLException {
+        result = stmt.executeQuery("Select * from playlist");
+        while (result.next())
+        {
+            String playListId = result.getString(1);
+            String playListName = result.getString("play_List_Name");
+            String playListType = result.getString(3);
+            String userIdFK = result.getString(4);
+            System.out.println(playListId+","+playListName+","+playListType+","+userIdFK);
+        }
+    }
+
+    @Test
+    public static void getUser_TableData_Successfully() throws SQLException {
+        result = stmt.executeQuery("Select * from users");
+        while (result.next())
+        {
+            String userId = result.getString(1);
+            String userName = result.getString("userName");
+            String userEmail = result.getString(3);
+            System.out.println(userId+","+userName+","+userEmail);
         }
     }
 
@@ -53,4 +77,6 @@ public class TracksTableTest extends BaseConnectionDriversVariablesTest
         pst.executeUpdate();
         System.out.println("\nDeleted "+pst.getUpdateCount()+" row\n");
     }
+
+
 }

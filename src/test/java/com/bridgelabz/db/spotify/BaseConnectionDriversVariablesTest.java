@@ -4,7 +4,7 @@
 //Date        : 29/01/2023
 //******************************************************
 
-package com.bridgelabz.db;
+package com.bridgelabz.db.spotify;
 
 import java.sql.*;
 

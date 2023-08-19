@@ -4,8 +4,9 @@
 //Date        : 29/01/2023
 //******************************************************
 
-package com.bridgelabz.db;
+package com.bridgelabz.db.spotify;
 
+import com.bridgelabz.db.spotify.BaseConnectionDriversVariablesTest;
 import org.testng.annotations.Test;
 
 import java.sql.PreparedStatement;
